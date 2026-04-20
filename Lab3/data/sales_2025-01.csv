@@ -1,0 +1,5 @@
+id,amount,category,date,currency
+tx001,1500.50,Electronics,2025-01-15,RUB
+tx002,300.00,Books,2025-01-16,RUB
+tx003,-50.00,Groceries,2025-01-17,RUB   # будет отброшена из-за отрицательной суммы
+tx004,200.00,Books,2025-01-18,USD       # вызовет CurrencyMismatchError

@@ -1,0 +1,5 @@
+[
+  {"id": "tx101", "amount": 4500.00, "category": "Electronics", "date": "2025-02-01", "currency": "RUB"},
+  {"id": "tx102", "amount": 1200.00, "category": "Books", "date": "2025-02-02"},
+  {"id": "tx101", "amount": 500.00, "category": "Repair", "date": "2025-02-03"}
+]

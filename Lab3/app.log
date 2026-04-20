@@ -1,0 +1,24 @@
+2026-04-20 09:23:09,965 - __main__ - INFO - Результат сохранён в result.json
+2026-04-20 09:26:22,565 - __main__ - INFO - Обработка файла: data\corrupt_file.csv
+2026-04-20 09:26:22,565 - app.services.report - ERROR - data\corrupt_file.csv: Ошибка чтения/формата: Отсутствуют обязательные колонки: {'id', 'date', 'amount', 'category'}
+2026-04-20 09:26:22,565 - __main__ - INFO - Обработка файла: data\sales_2025-01.csv
+2026-04-20 09:26:22,565 - app.services.report - ERROR - data\sales_2025-01.csv: Ошибка чтения/формата: CSV файл data\sales_2025-01.csv не содержит заголовков
+2026-04-20 09:26:22,566 - __main__ - INFO - Обработка файла: data\sales_2025-02.json
+2026-04-20 09:26:22,575 - app.services.report - ERROR - data\sales_2025-02.json: Ошибка чтения/формата: Невалидный JSON в файле data\sales_2025-02.json: Expecting value: line 1 column 1 (char 0)
+2026-04-20 09:26:22,576 - __main__ - INFO - Результат сохранён в result.json
+2026-04-20 09:26:56,328 - __main__ - INFO - Обработка файла: data\corrupt_file.csv
+2026-04-20 09:26:56,329 - app.services.report - ERROR - data\corrupt_file.csv: Ошибка чтения/формата: Отсутствуют обязательные колонки: {'date', 'amount', 'category', 'id'}
+2026-04-20 09:26:56,329 - __main__ - INFO - Обработка файла: data\sales_2025-01.csv
+2026-04-20 09:26:56,329 - __main__ - WARNING - Пропущена запись #3 в файле data\sales_2025-01.csv: Сумма должна быть положительной (получено -50.0)
+2026-04-20 09:26:56,329 - __main__ - WARNING - Пропущена запись #4 в файле data\sales_2025-01.csv: Ожидалась валюта RUB, получена USD       # вызовет CurrencyMismatchError
+2026-04-20 09:26:56,329 - __main__ - INFO - Обработка файла: data\sales_2025-02.json
+2026-04-20 09:26:56,329 - app.services.report - ERROR - data\sales_2025-02.json: Ошибка чтения/формата: Невалидный JSON в файле data\sales_2025-02.json: Expecting ',' delimiter: line 4 column 82 (char 270)
+2026-04-20 09:26:56,330 - __main__ - INFO - Результат сохранён в result.json
+2026-04-20 09:27:20,067 - __main__ - INFO - Обработка файла: data\corrupt_file.csv
+2026-04-20 09:27:20,067 - app.services.report - ERROR - data\corrupt_file.csv: Ошибка чтения/формата: Отсутствуют обязательные колонки: {'id', 'date', 'amount', 'category'}
+2026-04-20 09:27:20,067 - __main__ - INFO - Обработка файла: data\sales_2025-01.csv
+2026-04-20 09:27:20,067 - __main__ - WARNING - Пропущена запись #3 в файле data\sales_2025-01.csv: Сумма должна быть положительной (получено -50.0)
+2026-04-20 09:27:20,067 - __main__ - WARNING - Пропущена запись #4 в файле data\sales_2025-01.csv: Ожидалась валюта RUB, получена USD       # вызовет CurrencyMismatchError
+2026-04-20 09:27:20,067 - __main__ - INFO - Обработка файла: data\sales_2025-02.json
+2026-04-20 09:27:20,067 - __main__ - WARNING - Пропущена запись #3 в файле data\sales_2025-02.json: Дубликат id 'tx101'
+2026-04-20 09:27:20,068 - __main__ - INFO - Результат сохранён в result.json
