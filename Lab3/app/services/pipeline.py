@@ -1,4 +1,4 @@
-from typing import Iterator, Callable, TypeVar
+from typing import Iterator, Callable, TypeVar, Optional
 import logging
 from app.core.models import Transaction
 from app.core.exceptions import ValidationError
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 def filter_valid_transactions(
     transactions: Iterator[Transaction],
     expected_currency: str = "RUB",
-    on_error: Callable[[Transaction, Exception], None] = None
+    on_error: Optional[Callable[[Transaction, Exception], None]] = None
 ) -> Iterator[Transaction]:
     """
     Генератор, который пропускает только валидные транзакции.
@@ -25,13 +25,13 @@ def filter_valid_transactions(
             logger.warning(
                 f"Пропущена невалидная транзакция id={tx.id}: {e}"
             )
-            if on_error:
+            if on_error is not None:
                 on_error(tx, e)
         except Exception as e:
             logger.error(
                 f"Неожиданная ошибка при валидации {tx.id}: {e}"
             )
-            if on_error:
+            if on_error is not None:
                 on_error(tx, e)
 
 
