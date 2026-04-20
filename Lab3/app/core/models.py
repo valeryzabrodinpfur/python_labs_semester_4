@@ -8,8 +8,7 @@ class Transaction:
     amount: float
     category: str
     date: str
-    currency: Optional[str] = "RUB"   # по умолчанию рубли
+    currency: Optional[str] = "RUB"
 
     def __post_init__(self):
-        # Простейшая нормализация строк
         self.category = self.category.strip()

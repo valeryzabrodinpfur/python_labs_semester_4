@@ -1,6 +1,7 @@
 from typing import Iterator, Dict
 from app.core.models import Transaction
 
+
 def aggregate_stream(transactions: Iterator[Transaction]) -> Dict[str, float]:
     """Агрегирует транзакции по категориям, потребляя итератор."""
     result: Dict[str, float] = {}

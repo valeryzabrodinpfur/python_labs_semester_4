@@ -1,6 +1,6 @@
 import tracemalloc
 from contextlib import contextmanager
-from typing import Optional
+
 
 @contextmanager
 def track_memory_peak():

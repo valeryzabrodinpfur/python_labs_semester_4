@@ -1,10 +1,10 @@
 import pytest
-from pathlib import Path
 from app.core.models import Transaction
+
 
 @pytest.fixture
 def sample_valid_transaction() -> Transaction:
-    """Фикстура валидной транзакции для повторного использования в тестах."""
+    """Фикстура валидной транзакции для повторного использования."""
     return Transaction(
         id="tx001",
         amount=1500.50,
@@ -12,6 +12,7 @@ def sample_valid_transaction() -> Transaction:
         date="2025-01-15",
         currency="RUB"
     )
+
 
 @pytest.fixture
 def valid_csv_content() -> str:
@@ -22,6 +23,7 @@ def valid_csv_content() -> str:
         "tx002,300.00,Books,2025-01-16,RUB\n"
     )
 
+
 @pytest.fixture
 def mixed_csv_content() -> str:
     """CSV с одной валидной и двумя невалидными строками."""
@@ -31,6 +33,7 @@ def mixed_csv_content() -> str:
         "tx002,-50.00,Groceries,2025-01-17,RUB\n"
         "tx003,200.00,Books,2025-01-18,USD\n"
     )
+
 
 @pytest.fixture
 def sample_transaction_data():

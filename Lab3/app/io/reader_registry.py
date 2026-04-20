@@ -15,7 +15,9 @@ class ReaderRegistry:
     def get_reader(cls, extension: str) -> Type[BaseReader]:
         ext = extension.lower()
         if ext not in cls._readers:
-            raise ValueError(f"Нет зарегистрированного обработчика для расширения '{ext}'")
+            raise ValueError(
+                f"Нет зарегистрированного обработчика для расширения '{ext}'"
+            )
         return cls._readers[ext]
 
     @classmethod

@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import List
 import logging
 
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ class ProcessingReport:
         logger.error(full_error)
 
     def print_summary(self):
-        print("\n" + "="*50)
+        print("\n" + "=" * 50)
         print(f"Обработано файлов: {self.total_files}")
         print(f"Успешно: {self.success_files}")
         print(f"Ошибок: {self.error_files}")
@@ -32,4 +32,4 @@ class ProcessingReport:
             print("Список ошибок:")
             for err in self.errors:
                 print(f"  - {err}")
-        print("="*50)
+        print("=" * 50)
