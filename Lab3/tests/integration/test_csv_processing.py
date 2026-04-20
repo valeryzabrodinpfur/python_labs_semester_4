@@ -27,13 +27,16 @@ def test_csv_reader_with_tmp_path(tmp_path, mixed_csv_content):
     assert valid_txs[0].currency == "RUB"
 
     aggregated = aggregate_stream(iter(valid_txs))
-    assert aggregated == {"Electronics": 1500.50}
+    expected = {"Electronics": 1500.50}
+    assert aggregated == expected
 
 
 def test_csv_reader_empty_file(tmp_path):
     """Проверка обработки пустого CSV."""
     empty_file = tmp_path / "empty.csv"
-    empty_file.write_text("id,amount,category,date,currency\n", encoding='utf-8')
+    empty_file.write_text(
+        "id,amount,category,date,currency\n", encoding='utf-8'
+    )
 
     reader = CSVReader()
     transactions = list(reader.read(str(empty_file)))
@@ -43,8 +46,12 @@ def test_csv_reader_empty_file(tmp_path):
 def test_csv_reader_missing_columns(tmp_path):
     """Проверка выбрасывания DataFormatError при отсутствии колонок."""
     bad_csv = tmp_path / "bad.csv"
-    bad_csv.write_text("id,amount,date\n1,100,2025-01-01\n", encoding='utf-8')
+    bad_csv.write_text(
+        "id,amount,date\n1,100,2025-01-01\n", encoding='utf-8'
+    )
 
     reader = CSVReader()
-    with pytest.raises(DataFormatError, match="Отсутствуют обязательные колонки"):
+    with pytest.raises(
+        DataFormatError, match="Отсутствуют обязательные колонки"
+    ):
         list(reader.read(str(bad_csv)))
